@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>腾讯视频播放插件</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #mod_player{
+            width: 640px;
+            height: 360px;
+            border: 1px solid #000;
+            margin:0 auto;
+        }
+        #mod_player>div{
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mod_player"></div>
+
+    <script language="javascript" src="http://imgcache.gtimg.cn/tencentvideo_v1/tvp/js/tvp.player_v2.js" charset="utf-8"></script>
+    <script>
+        var video = new tvp.VideoInfo();
+        video.setVid("s001907bsll");
+        var player = new tvp.Player();
+        player.create({
+            width: '100%',
+            height: '100%',
+            video: video,
+            isVodFlashShowSearchBar: 0,//不显示顶部搜索栏
+            isVodFlashShowEnd: 0,//播放结束后不显示推荐视频
+            vodFlashExtVars: { bullet: 0 },//关闭弹幕
+            loadingSwf: "http://imgcache.qq.com/minivideo_v1/vd/res/skins/web_small_loading.swf",
+            //vodFlashSkin:"http://imgcache.qq.com/minivideo_v1/vd/res/skins/TencentPlayerMiniSkin.swf",//使用精简皮肤
+            pic: "http://www.appgame.com/wp-content/uploads/2016/01/bufulaizhan-diyiqi-jiaodian.jpg",
+            autoplay: false,
+            modId: "mod_player",
+        });
+    </script>
+</body>
+
+</html>

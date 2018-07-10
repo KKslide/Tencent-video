@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>腾讯视频播放插件</title>
+</head>
+
+<body>
+    <div id="mod_player"></div>
+
+    <script language="javascript" src="http://imgcache.gtimg.cn/tencentvideo_v1/tvp/js/tvp.player_v2.js" charset="utf-8"></script>
+    <script>
+        var video = new tvp.VideoInfo();
+        video.setVid("s001907bsll");
+        var player = new tvp.Player();
+        player.create({
+            width: '100%',
+            // height: 'auto',
+            video: video,
+            isVodFlashShowSearchBar: 0,//不显示顶部搜索栏
+            isVodFlashShowEnd: 0,//播放结束后不显示推荐视频
+            vodFlashExtVars: { bullet: 0 },//关闭弹幕
+            loadingSwf: "http://imgcache.qq.com/minivideo_v1/vd/res/skins/web_small_loading.swf",
+            //vodFlashSkin:"http://imgcache.qq.com/minivideo_v1/vd/res/skins/TencentPlayerMiniSkin.swf",//使用精简皮肤
+            // pic: "", // 缩略图
+            autoplay: false,
+            modId: "mod_player",
+        });
+    </script>
+</body>
+
+</html>
